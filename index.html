@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfolio 1.0</title>
+    <meta name="Badmus Waliyat Omoola" data-date="From September 1-2">
+
+        <style>
+            *{
+                box-sizing: border-box;
+            }
+            html{
+                scroll-behavior: smooth;
+            }
+            :root{
+                --content-color: rgb(0, 0, 255) ;
+                --background:rgb(0, 0, 0);
+                --text-color:#fff;
+                --background-color: rgb(0, 0, 0);
+                
+            }
+            body{
+            /* background: url("images/sun_image.jpg"); */
+                        background-color: var(--background-color);
+
+            height: 100%;
+            width: 100%;
+            gap: 5%;
+            /* background-repeat: no-repeat;
+            background-position: center;
+            background-size:cover; */
+            justify-self: center;
+              fill-opacity: 0.8;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+
+
+            header{
+                width: 80%;
+                position: fixed;
+                /* padding: 1%; */
+                backdrop-filter: 0.1;
+                box-shadow: inset 1px 1px 5px rgba(255, 254, 254, 0.5);
+                border: 1px solid #ffffff;
+                display: flex;
+                flex-wrap: wrap;
+               justify-self: center;
+               gap: 40px;
+               justify-content: center;
+             border-top-left-radius: 5px;
+             border-top-right-radius: 5px;
+
+            
+            }
+            #header_two{
+                display: none;
+            }
+            ul{
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                width: 40vw;
+                gap:40px ;
+                
+            }
+            li a{
+                text-decoration: none;
+                font-weight: 900;
+                transition: 0.2s;
+                color: #ffffff;
+            }
+            li a:hover{
+                transition: 1s;
+                color:var(--text-color);
+
+                text-decoration-line: underline;
+                text-decoration-thickness: 2px;
+                text-decoration-color: var(--text-color);
+                text-shadow:inset 3px 3px 5px rgb(255, 255, 255);
+            }
+            a:focus{
+                transition: 2s;
+            }
+            button{
+                background-color:var(--background);
+                border: none;
+                box-shadow:inset 2px 2px 10px rgba(255, 255, 255,0.2) ;
+                border-radius: 5px;
+                width: 150px;
+                height: 50px;
+                color: white;
+                cursor: pointer;
+                transition: 1s;
+                text-transform: capitalize;
+
+            }
+            button:hover{
+              fill-opacity: 0.8;
+                transition: 1s;
+              color: var(--text-color);
+                text-transform: lowercase;
+                  width: 145px;
+                box-shadow: inset 1px -1px 1px 2px rgba(255, 255, 255,0.3) ;
+
+            }
+            #hero_section{
+                width: 80%;
+                height: 25%;
+                backdrop-filter: 0.8;
+                border: 1px solid #fff;
+               justify-self: center;
+                box-shadow:inset 1px 1px 10px rgba(255, 254, 254, 0.5);
+                /* border-radius: 10px; */
+               justify-content: center;
+
+
+            }
+            .project{
+                padding-top:5%;
+            /* background-color: var(--background); */
+                                    background-color: var(--background-color);
+
+
+
+            }
+            #about_section{
+                   width: 80%;
+                height: 50%;
+                backdrop-filter: 0.8;
+                border: 1px solid #fff;
+               justify-self: center;
+                box-shadow:inset 1px 1px 10px rgba(255, 254, 254, 0.5);
+                /* border-radius: 10px; */
+
+            }
+            #service_section{
+                width: 80%;
+                height: 50%;
+                backdrop-filter: 0.5;
+                border: 1px solid #fff;
+               justify-self: center;
+               text-align: center;
+                box-shadow:inset 1px 1px 10px rgba(255, 254, 254, 0.5);
+                /* border-radius: 10px; */
+
+            }
+            #contact_section{
+                width: 80%;
+                height: 20%;
+                backdrop-filter: 0.8;
+                border: 1px solid #fff;
+               justify-self: center;
+               justify-content: center;
+                box-shadow:inset 0 0 10px rgba(255, 254, 254, 0.5);
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+                background-color: var(--content-color);
+
+            }
+            
+            .images{
+                width: 120%;
+                justify-self: center;
+                justify-content: center;
+                display: flex;
+                flex-wrap: wrap;
+                 gap: 20px;
+            }
+         
+            img{
+                height: 50%;
+                width: 32%;
+                align-self: center;
+             
+              
+            } 
+            .home{
+                width:23%;
+                align-self: center;
+                align-content: center;
+                color: var(--text-color);
+            }
+            marquee h1{
+                text-decoration: none;
+
+            }
+            h1{
+                color: var(--text-color);
+                text-decoration: underline;
+                text-decoration-color: var(--content-color);
+
+            }
+            h3{
+                line-height: 1.5;
+                 
+            }
+             .typing{
+                font-style: italic;
+                display: inline-block;
+                white-space: no-wrap;
+               color: var(--content-color);
+               animation: typing 8s steps(40)
+               infinite;
+               text-shadow: 0 1px 1px rgba(255, 255, 255,0.5);
+               text-decoration: underline;
+               text-decoration-color: var(--text-color);
+            }
+
+            @keyframes typing {
+                0%{
+                    clip-path: inset(0 100% 0 0);
+                }
+                25%{
+                   clip-path: inset(0 0 0 0);
+                }
+                50%{
+                clip-path: inset(10% 10% 0 0);
+
+                }
+                75%{
+                    clip-path: inset(0 100% 0 0);
+
+                }
+                100%{
+                    clip-path: inset(0 100% 0 0);
+
+                }
+  
+            }
+           
+       
+            .home .btn{
+                display: flex;
+                gap: 20px;
+            }
+            .home button:nth-of-type(2){
+                background-color:#fff;
+                color:var(--content-color);
+            }
+              .home button:nth-of-type(2):hover{
+                box-shadow: inset 1px -1px 1px 2px rgba(255, 255, 255,0.3) ;
+                     transition: 1s;
+                     background-color: var(--content-color);
+              color: var(--text-color);
+                text-transform: lowercase;
+                  width: 145px;
+
+              }
+            .home button{
+                background-color:var(--background);
+                border: none;
+                box-shadow:inset 2px 2px 10px rgba(255, 255, 255,0.2) ;
+                border-radius: 5px;
+                width: 150px;
+                height: 50px;
+                color: var(--content-color);
+                cursor: pointer;
+                transition: 1s;
+                text-transform: capitalize;   
+            }
+            .home button:hover{
+                fill-opacity: 0.8;
+                transition: 1s;
+              color: var(--text-color);
+                text-transform: lowercase;
+                width: 145px;
+                box-shadow: inset 1px -1px 1px 2px rgba(255, 255, 255,0.3) ;
+            }
+            .card{
+                display: flex;
+                /* grid-template-rows: repeat(2,1fr); */
+                /* flex-wrap: wrap; */
+                justify-self: center;
+                text-align: left;
+                gap: 10px;
+                width: 65%;
+                height: 30%;
+                color: var(--text-color);
+
+            }
+            b{
+                text-decoration: overline;
+            }
+         
+            p{
+                box-shadow:  -3px 1px 3px rgba(255, 255, 255, 0.2) ;
+                border-radius:0 9%;
+                padding: 2%;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                display: inline-block;
+                overflow: hidden;
+                vertical-align: bottom;
+                cursor: text;
+               transition: 2s;
+
+            
+            }
+            p:hover{
+               transition: 2s;
+               border: solid 1px var(--text-color);
+            }
+
+            .cards{
+                display: flex;
+                /* grid-template-columns: repeat(2,1fr);
+                 */ 
+                 flex-wrap: wrap;
+                color: var(--text-color);
+                text-align: left;
+                align-content: center; 
+                 justify-content: center;
+                justify-self: center; 
+                width: 60%;
+                 gap: 20px; 
+
+               
+            }
+            #box{
+                box-shadow:  -3px 1px 3px rgba(255, 255, 255, 0.2) ;
+                /* border: 1px solid #fff; */
+               width: 30%;
+               padding: 10px;
+               height:50% ;
+               /* padding:10px; */
+               text-align:left;
+               background-color: var(--background);
+               color: var(--text-color);
+               cursor: pointer;
+              transition: 0.3s ;
+
+
+            }
+            #box h3{
+                line-height: 1.5;
+                text-align: center;
+                background-color: var(--content-color);
+                fill-opacity: 0.4;
+               border-radius: 10px;
+                box-shadow:  -3px 1px 3px rgba(255, 255, 255, 0.2) ;
+
+            }
+            #box:hover{
+                border: 1px solid var(--text-color);
+                width: 32%;
+                
+            }
+            table{
+                width: 50%;
+                /* border: 1px solid var(--text-color); */
+                color: var(--text-color);
+                justify-self: center;
+                gap: 10px;
+                flex-wrap: wrap;
+                /* background-color: var(--content-color); */
+            }
+            pre{
+                /* border: 1px solid var(--text-color); */
+                text-align: center;
+                color: var(--text-color);
+            }
+            pre a{
+                color: var(--text-color);
+                text-decoration-color:var(--background);
+                text-decoration-thickness: 3px;
+            }
+            h2{
+                text-align: center;
+                color: var(--text-color);
+            }
+
+
+
+
+
+           @media (max-width:767px) {
+
+            header{
+                display:none;
+            }
+
+            #nav_three{
+                display:none;
+            }
+
+            #header_two{
+                display:flex;
+                position:fixed;
+                top:10px;
+                left:5%;
+                width:90%;
+                padding:10px;
+                justify-content:center;
+                align-items:center;
+                z-index:1000;
+            }
+
+            #nav_responsive{
+                width:100%;
+                height:45px;
+                background-color:var(--background);
+                color:var(--text-color);
+                border:1px solid var(--text-color);
+                border-radius:5px;
+                padding:5px;
+            }
+
+            .project{
+                padding-top:80px;
+            }
+
+            #hero_section,
+            #about_section,
+            #service_section,
+            #contact_section{
+                width:90%;
+                height:auto;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
+            .images{
+                width:100%;
+                flex-wrap:wrap;
+                flex-direction:column;
+                padding:20px;
+                gap:20px;
+            }
+
+            img{
+                width:90%;
+                height:auto;
+            }
+
+            .home{
+                width:100%;
+                text-align:center;
+            }
+
+            .home .btn{
+                flex-wrap:wrap;
+                justify-content:center;
+                gap:15px;
+            }
+
+            .home h3{
+                font-size:18px;
+            }
+
+            .card{
+                width:90%;
+                height:auto;
+                flex-direction:column;
+                gap:20px;
+                padding-bottom:20px;
+            }
+
+            .card p{
+                width:100%;
+                margin:0;
+            }
+
+            .cards{
+                width:90%;
+                height:auto;
+                flex-direction:column;
+                gap:20px;
+                padding-bottom:30px;
+            }
+
+            #box{
+                width:100%;
+                height:auto;
+                min-height:150px;
+            }
+
+            #box:hover{
+                width:100%;
+            }
+
+            table{
+                width:90%;
+                overflow-x:auto;
+                display:block;
+                font-size:13px;
+            }
+
+            table th,
+            table td{
+                padding:5px;
+                white-space:nowrap;
+            }
+
+            #contact_section{
+                padding:20px 0;
+            }
+
+            pre{
+                white-space:pre-wrap;
+                word-wrap:break-word;
+                padding:10px;
+            }
+
+            h1{
+                font-size:24px;
+            }
+
+            h2{
+                font-size:20px;
+            }
+
+            .typing{
+                white-space:normal;
+            }
+
+           }
+
+
+
+ 
+           @media (min-width:768px) and (max-width:1023px){
+
+                header{
+                    display:none;
+                }
+
+                #header_two{
+                    display:none;
+                }
+
+                #nav_three{
+                    width:90%;
+                    position:fixed;
+                    top:10px;
+                    left:5%;
+                    padding:1%;
+                    backdrop-filter:0.1;
+                    box-shadow:inset 1px 1px 5px rgba(255, 254, 254, 0.5);
+                    border:1px solid #ffffff;
+                    display:flex;
+                    flex-wrap:wrap;
+                    justify-self:center;
+                    gap:20px;
+                    justify-content:center;
+                    font-size:20px;
+                    z-index:1000;
+                    border-top-left-radius:5px;
+                    border-top-right-radius:5px;
+                }
+
+                #nav_three ul{
+                    width:auto;
+                    gap:20px;
+                }
+
+                .project{
+                    padding-top:90px;
+                }
+
+                #hero_section,
+                #about_section,
+                #service_section,
+                #contact_section{
+                    width:90%;
+                    height:30%;
+                    margin-left:auto;
+                    margin-right:auto;
+                }
+
+                .images{
+                flex-wrap:wrap;
+                   flex-direction: column;
+                    width:100%;
+                    /* gap:20px; */
+                    /* padding:20px; */
+                }
+
+                img{
+                    width:80%;
+                    height:auto;
+                }
+
+                .home{
+                    width:50%;
+                }
+
+                .card{
+                    width:85%;
+                    height:auto;
+                    flex-wrap:wrap;
+                    padding-bottom:20px;
+                }
+
+                .card p{
+                    width:100%;
+                    display:flex;
+                    flex-wrap:wrap
+                }
+
+                .cards{
+                    width:85%;
+                    height:auto;
+                }
+
+                #box{
+                    width:45%;
+                    height:auto;
+                    min-height:180px;
+                }
+
+                #box:hover{
+                    width:47%;
+                }
+
+                table{
+                    width:80%;
+                }
+
+            }
+
+
+
+
+            @media (min-width:1024px) and (max-width:1439px){
+
+                header{
+                    display:flex;
+                    width:80%;
+                    left:10%;
+                }
+
+                #header_two{
+                    display:none;
+                }
+
+                #nav_three{
+                    display:none;
+                }
+
+                /* .project{
+                    padding-top:7%;
+                } */
+
+                #hero_section,
+                #about_section,
+                #service_section,
+                #contact_section{
+                    width:80%;
+                }
+
+            }
+
+
+
+            @media (min-width:1440px)
+             {
+                header{
+                    display:none;
+                }
+
+                #header_two{
+                    display:none;
+                }
+
+                #nav_three{
+                    width:80%;
+                    position:fixed;
+                    top:10px;
+                    left:10%;
+                    padding:1%;
+                    backdrop-filter:0.1;
+                    box-shadow:inset 1px 1px 5px rgba(255, 254, 254, 0.5);
+                    border:1px solid #ffffff;
+                    display:flex;
+                    flex-wrap:wrap;
+                    justify-self:center;
+                    gap:40px;
+                    justify-content:center;
+                    font-size:30px;
+                    z-index:1000;
+                    border-top-left-radius:5px;
+                    border-top-right-radius:5px;
+                }
+
+                /* .project{
+                    padding-top:7%;
+                } */
+
+            }
+    </style>
+</head>
+
+
+            <body>
+            <header>
+               <ul>
+                <li >  <a href="#hero_section">Home</a></li>
+                <li> <a href="#about_section">About</a></li>
+                <li> <a href="#service_section">Services</a></li>
+                <li> <a href="#contact_section">Contact</a></li>
+               </ul>
+               <button>
+                Click to know more
+               </button>
+            </header>
+             
+
+            <header  id="header_two">
+                <select name="heade" id="nav_responsive">
+                <option value=""> Menu    </option>
+                 <option value="home"><a href="#hero_section">Home</a></option>
+                 <option value="about"><a href="#about_section">About</a></option>
+                 <option value="service"><a href="#service_section">Services</a></option>
+                 <option value="contact"><a href="#contact_section">Contact</a></option>
+                </select>
+
+            </header>
+
+            <header id="nav_three">
+               <ul>
+                <li >  <a href="#hero_section">Home</a></li>
+                <li> <a href="#about_section">About</a></li>
+                <li> <a href="#service_section">Services</a></li>
+                <li> <a href="#contact_section">Contact</a></li>
+               </ul>
+               <button>
+                Click to know more
+               </button>
+            </header>
+                <div class="project">
+                <div  id="hero_section">
+                <div class="images">
+               
+                       <img src="images/code.png" alt="code.png">
+
+               
+                       <div class="home">
+                    <h3>
+                        Discover excellent , authentic, furnished and modern
+                        <i  class="typing"> VIBeCoding</i> ideas brought to to by
+                        <i  class="typing">Badmus Waliyat</i>. <br>
+
+                       <em>Scroll down and View My Work, <i  class="typing"> subscribe</i> for more, and <i>message</i>  for more enquiries</em> 
+                    </h3>
+                    <div class="btn">
+                   <button>
+                       Subscribe
+                    </button>
+
+                    <button>
+                        Chat for Inspiration
+                    </button>
+                    </div>
+ 
+                       </div>
+              
+                </div>
+                    
+                </div>
+
+
+                <div id="about_section">
+                <marquee behavior="scroll" direction="left"><h1>"Welcome to the code <I class="typing">Ideas</I> to <i class="typing">Reality</i> forum"</h1></marquee>
+
+                 <div class="card">
+                           <p>
+                   <input type="checkbox" checked >     I am a vibe coder, Frontend developer and creative Designer, 
+                    who enjoys turning wild ideas,rough concepts, and 
+                    <i class="typing">"I wonder if this could work.."</i> moments into functional digital experiences.
+                </p>
+
+                <p>
+                   <input type="checkbox" checked>    For me, coding is not just about writing lines of codes. It is about understanding the vibe,
+                    solving the problem, and creating something people actually enjoy <i class="typing">Using</i>. I blend creativity with technology to build interfaces
+                    that are respondive,intuitive,visually engaging, and purposeful.
+                </p>
+                <p>
+                    <input type="checkbox" checked>   "Every idea is worth the stress", that is a watchword around here.
+                    But sometimes, the stress is not worthy of the idea, and that is why my team 
+                    and I had worked on a plethora of ideas, templates all with its assigned color branding , 
+                   <b> "No need to Stress, Just pick your brand"</b>
+                </p>
+                 </div>
+                </div>
+
+
+                <div id="service_section">
+                  <h1>
+                    Services I offer
+                  </h1>
+
+                  <div class="cards">
+                    <div id="box">
+                        <h3>Frontend Development</h3> <br>
+                        <small>
+                            Building responsive websites with HTML and Css.Coming soon is our Javascript model,a more furnished model, you do not want to miss it
+                        </small>
+                    </div>
+                    <div id="box">
+                                            <h3>Vibe Coding</h3> <br>
+                        <small>
+                            Rapidly transforming ideas and concepts into working prototypes and digital product. We do not just create a product, we create statements
+                         </small>
+                    </div> 
+                    <div id="box">
+                                            <h3>Website Development</h3> <br>
+                        <small>
+                            Creating landing pages, portfolios, business websites and interactive web experiences,that gives  client a reason to visit your page more
+                        </small>
+                    </div>  
+                    <div id="box">
+                    <h3>Responsive Design</h3> <br>
+                        <small>
+                           Making Websites look and work beautifully across phones, tablets and desktops.You can trust us with the task.
+                        </small>
+                    </div>
+                    <div id="box">
+                    <h3>Creative Digital Design</h3> <br>
+                        <small>
+                           Combining visual storytelling, branding and technology to create memorable digital experiences
+                        </small>
+                    </div>
+
+                  </div>
+                </div>
+
+                <footer id="contact_section">
+                    <div class="contact">
+                        <table>
+                            <h2> YOu Need Me? Do not Stress, here is where to find me</h2>
+                           
+                             <th>
+                                <td>Number:</td>
+                                <td>Email:</td>
+                                <td>Github handle:</td>
+                             </th>
+                             <tr>
+                                <td></td>
+
+                                <td>08167211810</td>
+                                <td>waliyatgbadamosi419@gmail.com</td>
+                                <td>ghhkkojivb</td>
+                             </tr>
+                        </table>
+                        <pre>&copy;2026 copyright. All Right Reserved. <br> <a href="#">For more enquiries</a></pre>
+
+                    </div>
+                </footer>
+                </div>
+                
+            </body>
+
+            </html>
+
+
+ 
